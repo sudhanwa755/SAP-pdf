@@ -141,6 +141,29 @@ body {
   box-shadow: 0 4px 10px rgba(2, 132, 199, 0.5);
 }
 
+.btn-drive-pdf {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, #7C3AED 0%, #6D28D9 100%);
+  color: #FFFFFF !important;
+  font-weight: 700;
+  font-size: 12.5px;
+  padding: 7px 16px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 6px rgba(124, 58, 237, 0.35);
+  text-decoration: none;
+}
+
+.btn-drive-pdf:hover {
+  background: linear-gradient(135deg, #6D28D9 0%, #5B21B6 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(124, 58, 237, 0.5);
+}
+
 .btn-toc {
   background: #334155;
   color: #F1F5F9;
@@ -648,6 +671,29 @@ td.mono, code.mono {
   box-shadow: 0 6px 18px rgba(2, 132, 199, 0.5);
 }
 
+.cover-cta-drive {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: linear-gradient(135deg, #7C3AED 0%, #6D28D9 100%);
+  color: #FFFFFF !important;
+  font-weight: 800;
+  font-size: 15px;
+  padding: 12px 26px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(124, 58, 237, 0.4);
+  transition: all 0.2s;
+  text-decoration: none;
+}
+
+.cover-cta-drive:hover {
+  background: linear-gradient(135deg, #6D28D9 0%, #5B21B6 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(124, 58, 237, 0.5);
+}
+
 /* TABLE OF CONTENTS */
 .toc-box {
   background: #FFFFFF;
@@ -837,7 +883,7 @@ a.toc-item.alt .toc-n {
   }
   
   /* Hide interactive / web-only elements */
-  .floating-bar, .cover-cta, .no-print {
+  .floating-bar, .cover-cta, .cover-cta-drive, .btn-drive-pdf, .no-print {
     display: none !important;
   }
   
@@ -901,10 +947,13 @@ a.toc-item.alt .toc-n {
     <span class="tag">Student Edition</span>
   </div>
   <div class="floating-actions">
-    <a href="#toc" class="btn-toc">📑 Jump to Contents</a>
+    <a href="#toc" class="btn-toc">📑 Contents</a>
     <button class="btn-pdf" id="btnPrintTop" onclick="exportToPdf()">
-      <span>📥 Download / Print as A4 PDF</span>
+      <span>📥 Download as A4 PDF</span>
     </button>
+    <a href="https://drive.google.com/file/d/1xVwmicmYR-GjN_aScP2gicpkwddUyes_/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn-drive-pdf">
+      <span>📂 Extra ABAP Notes (Drive)</span>
+    </a>
   </div>
 </div>
 
@@ -934,10 +983,13 @@ a.toc-item.alt .toc-n {
     <div class="cover-tag"><b>Working</b> Navigation Links</div>
   </div>
   
-  <div>
-    <button class="cover-cta no-print" id="btnPrintCover" onclick="exportToPdf()">
+  <div style="display: flex; justify-content: center; gap: 12px; flex-wrap: wrap;" class="no-print">
+    <button class="cover-cta" id="btnPrintCover" onclick="exportToPdf()">
       <span>📥 Export All Notes to A4 PDF</span>
     </button>
+    <a href="https://drive.google.com/file/d/1xVwmicmYR-GjN_aScP2gicpkwddUyes_/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="cover-cta-drive">
+      <span>📂 Download Extra ABAP Notes (Drive PDF)</span>
+    </a>
   </div>
   <div style="font-size:11px; color:#64748B; margin-top:14px;" class="no-print">
     <em>Tip: In your print window, select Destination: <strong>"Save as PDF"</strong>, Paper: <strong>A4</strong>, and check <strong>"Background graphics"</strong>!</em>
@@ -6266,10 +6318,13 @@ START-OF-SELECTION.
     type these examples by hand, intentionally break them, inspect them in the debugger, and understand every return code.
     You now have the complete foundational, object-oriented, CDS data modeling, and error-handling roadmap to conquer enterprise SAP development!
   </p>
-  <div style="margin-top:20px;" class="no-print">
+  <div style="margin-top:20px; display: flex; justify-content: center; gap: 14px; flex-wrap: wrap;" class="no-print">
     <button class="cover-cta" onclick="exportToPdf()">
       <span>📥 Print / Save Complete Notes as A4 PDF</span>
     </button>
+    <a href="https://drive.google.com/file/d/1xVwmicmYR-GjN_aScP2gicpkwddUyes_/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="cover-cta-drive">
+      <span>📂 Download Extra ABAP Notes (Drive PDF)</span>
+    </a>
   </div>
 </div>
 
